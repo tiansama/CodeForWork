@@ -15,33 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="helloworld.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="testnullptr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="constptr.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="compare.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="checksource.cpp">
+    <ClCompile Include="printvector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="helloworld.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="compare.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="checksource.h">
+    <ClInclude Include="printvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

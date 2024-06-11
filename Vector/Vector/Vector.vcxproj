@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5f86ac7f-b7cd-4694-b257-ba3b60d28832}</ProjectGuid>
-    <RootNamespace>Class1</RootNamespace>
+    <ProjectGuid>{0a2f6b40-7e2f-494e-87e9-487599432e66}</ProjectGuid>
+    <RootNamespace>Vector</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,17 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="checksource.cpp" />
-    <ClCompile Include="helloworld.cpp" />
-    <ClCompile Include="constptr.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="compare.cpp" />
-    <ClCompile Include="testnullptr.cpp" />
+    <ClCompile Include="printvector.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="compare.h" />
-    <ClInclude Include="checksource.h" />
-    <ClInclude Include="helloworld.h" />
+    <ClInclude Include="printvector.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,8 +2,9 @@
 //
 
 #include <iostream>
+#include "helloworld.h"
 
-int main()
+void helloworld()
 {
     std::cout << "Hello World!\n";
     std::cout<< "Hello World!\n";
