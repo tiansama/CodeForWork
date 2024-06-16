@@ -21,9 +21,33 @@
     <ClCompile Include="printvector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="studentsign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vectorloop.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testarray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testvector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="studentsign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="printvector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vectorloop.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testarray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
