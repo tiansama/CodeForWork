@@ -1,6 +1,9 @@
 ﻿#include<iostream>
 #include<string>
 #include<locale>
+#include<string>
+
+
 
 #include"defpoint.h"
 #include"testpointsize.h"
@@ -117,7 +120,7 @@ void smartpoint() {
 void sharedpoint() {
 	//method
 	//recording how many pointer are using this memory    .use_count()
-	//return a bool value->if this pointer is the only owner, return true ,or return false  ！！！！！！！！！！C++17取消了！！！！！！！
+	//return a bool value->if this pointer is the only owner, return true ,or return false  ！！！！！！！！！！C++17取消了！！！！！！！  unique
 	//reset 只有是最后一个释放才会真正释放内存，否则只是把这个指针变成nullptr
 	std::shared_ptr<int> sptr{std::make_shared<int>(5)};    //make_shared不支持数组类型生成
 
@@ -157,22 +160,93 @@ void teststring() {
 	wchar_t wstr[0xFF]{ L"hello张三" };
 	std::wcout.imbue(std::locale("chs"));
 	std::wcout << wstr << std::endl;
+	//scanf_s 只表示最大可接受的字符值（用以解决输入的
+
+
+	char str_test[0xFF];
+	std::cin >> str_test;
+	//cout面对char类型的指针-》优先当作字符串处理
+	//！！！！！！！！！！！！！不要忘记设置本地字符集！！！！！！！！！！setlocale(LC_ALL, "chs");
+	wchar_t wstr_test[0xFF];
+	std::wcin >> wstr_test;
 }
 
+void testforstring() {
+	//strlen求字符串长度
+	//char str[0xFF];
+	//std::cin >> str;
+	//std::cout << strlen(str) << std::endl;   //返回无符号整数
+
+	//wcslen
+	//setlocale(LC_ALL, "chs");
+	//wchar_t wstr[0xFF];
+	//std::wcin >> wstr;
+	//std::wcout << wstr;
+	//std::cout << wcslen(wstr) << std::endl;
+
+	//char str[0xFF];
+	//std::cin >> str;
+	//int length = 0;
+	//while (str[length] != '\0') {
+	//	length++;
+	//}
+	//std::cout << length << std::endl;
 
 
+
+	setlocale(LC_ALL, "chs");
+
+    wchar_t wstr[0xFF] = { 0 };
+	std::wcin >> wstr;
+	std::wcout << wstr<<std::endl; 
+	std::cout << wcslen(wstr) << std::endl;
+
+
+}
+
+//结构体->自定义数据类型  类似于数组，但是结构不规则 但是就算是short int int还是12个（存在内存对齐的问题！！！！
+// 内存对齐可以被利用
+//typedef struct 命名{}* 真实命名（真实命名可以有很多个）
+typedef struct Role {
+	int HP;
+	int MP;
+}* PRole;
+
+
+//联合体
+//union
+//share memory   由最大成员变量确定
+union testunion {
+	int a;
+	float b;
+	long long c;
+};
+
+
+//匿名联合体结构体
+union{
+	int a;
+	float b;
+	long long c;
+}ls;   //只能用一次 多用于结构体中   不重用
 
 int main() {
-	//defpoint();
-	//testpointsize();
-	//testpoint2();
-	//constpoint();
-	//pointandvector();
-	//dynallo();
-	//refer();
-	//sortmethod();
-	//smartpoint();
-	//sharedpoint();
-	teststring();
+	//局部变量和局部常量在栈区  栈区溢出可以操纵操作系统
+	//teststring();
+	//testforstring();
+	Role user;
+	user.HP = 100;
+	user.MP = 1000;
+	PRole monster;
+	monster = &user;
+	std::cout << monster->HP << std::endl;
+
+	testunion uu; //内存分配
+	std::cout << sizeof(uu) << std::endl;
+	uu.a = 100;
+	std::cout << uu.a << std::endl;
+	uu.b = 1.1;
+	std::cout << uu.b << std::endl;
+
 	return 0;
 }
