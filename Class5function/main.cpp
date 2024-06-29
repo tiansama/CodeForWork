@@ -52,8 +52,8 @@ bool act(const role& user) {  //常量引用
 //只有几个选项 e.g bool bigsort = true;  注意默认参数只能放在最后
 
 //不定量参数
-
-int main() {
+//参数个数，程序的路径及文件名   最后的一个是空指针
+int main(int argcount,char* c_arg[]) {
 	int x = 100;
 	int y = 1000;
 	int result = add(&x, &y);
@@ -72,6 +72,8 @@ int main() {
 
 	role user{ 1,2 };
 	act(user);
+
+
 
 	return 0;
 }
